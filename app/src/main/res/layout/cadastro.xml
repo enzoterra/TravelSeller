@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<ScrollView
+    android:id="@+id/layoutCadastro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginBottom="100dp">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cadastro">
+
+
+    <!--Título-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rectangle"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="    Novo Cadastro    "
+        android:textAlignment="center"
+        android:textColor="@color/green_cadastro"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--Dados do Cliente-->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edge_distance"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Dados do Cliente"
+        android:textAlignment="center"
+        android:textColor="#106A77"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <!--Nome do Cliente-->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edge_distance"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Nome:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <!--Nome Cliente-->
+    <EditText
+        android:id="@+id/ETnomeCliente"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white_gray"
+        android:hint="Ex. José Almeida da Silva"
+        android:textSize="16sp"
+        android:inputType="textCapWords"
+        android:layout_marginStart="@dimen/edge_distance"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+    <!--CPF do Cliente-->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edge_distance"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="CPF:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETnomeCliente" />
+
+    <!--CPF Cliente-->
+    <EditText
+        android:id="@+id/ETcpf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="000.000.000-00"
+        android:textAlignment="textStart"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/ETnomeCliente" />
+
+
+    <!--RG do Cliente-->
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edge_distance"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="RG:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETcpf" />
+
+    <!--RG Cliente-->
+    <EditText
+        android:id="@+id/ETrg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edge_distance"
+        android:backgroundTint="@color/white_gray"
+        android:hint="0000000"
+        android:textAlignment="textStart"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+
+    <!--Data Nascimento do Cliente-->
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Data de Nascimento: "
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETcpf" />
+
+    <!--Data Nascimento Cliente-->
+    <EditText
+        android:id="@+id/ETnascimento"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="00/00/0000"
+        android:textAlignment="center"
+        android:inputType="date"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+
+    <!-- ______________________________________________________ -->
+
+
+    <!--Dados do Viagem-->
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edge_distance"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Dados da Viagem"
+        android:textAlignment="center"
+        android:textColor="#106A77"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETrg" />
+
+    <!--Hotel-->
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edge_distance"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Hotel:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <!--Hotel-->
+    <EditText
+        android:id="@+id/EThotel"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white_gray"
+        android:hint="EX. Ocean Palace"
+        android:inputType="text"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:layout_marginStart="@dimen/edge_distance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+
+    <!--Cidade-->
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edge_distance"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Cidade:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EThotel" />
+
+    <!--Cidade-->
+    <EditText
+        android:id="@+id/ETcidade"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edge_distance"
+        android:backgroundTint="@color/white_gray"
+        android:hint="EX. Natal"
+        android:inputType="textCapWords"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+    <!--Estado-->
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Estado:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ETcidade"
+        app:layout_constraintTop_toBottomOf="@+id/EThotel" />
+
+    <!--Estado-->
+    <EditText
+        android:id="@+id/ETestado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="EX. RN"
+        android:inputType="textCapCharacters"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ETcidade"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+    <Button
+        android:id="@+id/buttonContinuar1"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/oval"
+        android:elevation="1dp"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:text="Continuar"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonCancelar1"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/oval_gray"
+        android:elevation="1dp"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:text="Cancelar"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

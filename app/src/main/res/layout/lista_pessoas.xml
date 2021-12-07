@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layoutListaPessoas"
+    tools:context=".ListaPessoas">
+
+    <!--Título-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rectangle"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="    Lista dos Clientes    "
+        android:textAlignment="center"
+        android:textColor="@color/green_cadastro"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- Lista -->
+    <ListView
+        android:id="@+id/lista_pessoas"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="150dp"
+        android:paddingTop="6dp"
+        android:background="@drawable/list_background"
+        android:divider="@color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <!-- Botão Adicionar Pessoa-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingButtonIntegrante"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/botao_cadastrar"
+        android:src="@drawable/icon_add"
+        app:layout_constraintBottom_toBottomOf="@+id/lista_pessoas"
+        app:layout_constraintEnd_toEndOf="@+id/lista_pessoas" />
+
+
+    <Button
+        android:id="@+id/buttonVoltarListaPessoas"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="@dimen/edge_distance"
+        android:background="@drawable/oval_gray"
+        android:elevation="1dp"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:text="Voltar"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

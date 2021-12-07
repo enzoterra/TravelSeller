@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContinuacaoCadastroFinal">
+
+    <ScrollView
+        android:id="@+id/layoutContinuacaoCadastroFinal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="70dp"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!--Título-->
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rectangle"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:padding="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="    Novo Cadastro    "
+                android:textAlignment="center"
+                android:textColor="@color/green_cadastro"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--Outras Informações-->
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/edge_distance"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:text="Outras Informações"
+                android:textAlignment="center"
+                android:textColor="#106A77"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+            <!--Valor Venda-->
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/edge_distance"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:text="Valor da Venda:"
+                android:textAlignment="center"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <EditText
+                android:id="@+id/ETvalorTotal"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/edge_distance"
+                android:backgroundTint="@color/white_gray"
+                android:hint="Ex. R$ 2500"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+
+            <!--Valor Porcentagem Comissão-->
+            <TextView
+                android:id="@+id/textViewPorcentagem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:text="Comissão:"
+                android:textAlignment="center"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <TextView
+                android:id="@+id/textViewPorcentagemSimbolo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:text="%"
+                android:textAlignment="center"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/ETporcentagemComissao"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPorcentagem" />
+
+            <EditText
+                android:id="@+id/ETporcentagemComissao"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/white_gray"
+                android:hint="12"
+                android:maxLength="2"
+                android:inputType="number"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ETvalorTotal"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+
+            <!--Observações-->
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/edge_distance"
+                android:layout_marginTop="70dp"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:text="Observações:"
+                android:textAlignment="center"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ETvalorTotal" />
+
+            <EditText
+                android:id="@+id/ETobservacoes"
+                android:layout_width="330dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:background="@drawable/edit_texts"
+                android:inputType="textAutoCorrect"
+                android:gravity="top"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+
+            <!--Botão Adicionar Pessoas-->
+            <Button
+                android:id="@+id/buttonAdicionarPessoas"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/oval_green"
+                android:elevation="1dp"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:text="Adicionar Pessoas"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ETobservacoes" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/buttonSalvarCadastroFinal"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/oval"
+        android:elevation="1dp"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:text="Salvar"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCancelarCadastroFinal"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/oval_gray"
+        android:elevation="1dp"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:text="Voltar"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

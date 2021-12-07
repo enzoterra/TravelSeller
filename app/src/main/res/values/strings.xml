@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TravelSeller</string>
+    <string name="titulo_viagens">Clientes com</string>
+    <string name="titulo_viagens2">Viagens Marcadas</string>
+    <string name="titulo_clientes">Clientes Cadastrados</string>
+    <string name="titulo_estatisticas">Estatísticas</string>
+    <string name="menu_clientes">Clientes</string>
+    <string name="menu_viagens">Viagens</string>
+    <string name="menu_estatisticas">Estátisticas</string>
+</resources>

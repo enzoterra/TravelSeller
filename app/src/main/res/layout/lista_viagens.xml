@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListaViagens">
+
+
+    <!-- Título Lista -->
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Viagens Programadas"
+        android:textAlignment="textStart"
+        android:textColor="@color/black_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgSuperiorViagens" />
+
+
+    <ImageButton
+        android:id="@+id/buttonSettings"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/icon_settings"
+        android:background="@color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView13"
+        android:contentDescription="configurações" />
+
+
+    <!-- Imagem Superior -->
+    <ImageView
+        android:id="@+id/imgSuperiorViagens"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/viagem_imagem"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true" />
+
+
+    <!-- Lista -->
+    <ListView
+        android:id="@+id/lista_viagens"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="25dp"
+        android:paddingTop="8dp"
+        android:background="@drawable/list_background"
+        android:divider="@color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+
+    <!-- Bottom Navigation-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:theme="@style/Widget.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/gradient_viagens"
+        android:elevation="8dp"
+        app:itemBackground="@drawable/selector_item"
+        app:itemIconSize="23dp"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/menu_navigation"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Título Superior -->
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/titulo_viagens"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/titulo_viagens2"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+
+</FrameLayout>

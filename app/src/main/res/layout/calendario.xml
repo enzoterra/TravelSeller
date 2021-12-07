@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Calendario">
+
+
+        <!-- Título Lista -->
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/transparent"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing="0.05"
+            android:lineSpacingExtra="4sp"
+            android:text="Calendário de Viagens"
+            android:textAlignment="textStart"
+            android:textColor="@color/black_text"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgSuperiorViagens" />
+
+
+        <!-- Imagem Superior -->
+        <ImageView
+            android:id="@+id/imgSuperiorViagens"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/calendario_imagem"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true" />
+
+
+        <!-- Bottom Navigation-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:theme="@style/Widget.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/gradient_calendario"
+        android:elevation="8dp"
+        app:itemBackground="@drawable/selector_item"
+        app:itemIconSize="23dp"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/menu_navigation"/>
+
+        <CalendarView
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/calendar_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Título Superior -->
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/titulo_calendario"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</FrameLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Clientes">
+
+
+    <!-- Imagem Superior -->
+    <ImageView
+        android:id="@+id/imgSuperiorClientes"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/clientes_imagem"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true" />
+
+
+<!-- Botão Adicionar Cadastro-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="false"
+        android:elevation="1dp"
+        android:src="@drawable/icon_add"
+        android:theme="@style/Widget.Design.FloatingActionButton"
+        app:layout_constraintBottom_toBottomOf="@+id/lista_clientes"
+        app:layout_constraintEnd_toEndOf="@+id/lista_clientes"
+        android:contentDescription="Cadastrar Nova Viagem" />
+
+
+<!-- Bottom Navigation-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:theme="@style/Widget.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/gradient_clientes"
+        android:elevation="8dp"
+        app:itemBackground="@drawable/selector_item"
+        app:itemIconSize="23dp"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/menu_navigation" />
+
+
+    <!-- Título Lista -->
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Lista de Clientes"
+        android:textAlignment="textStart"
+        android:textColor="@color/black_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgSuperiorClientes" />
+
+    <!--EditText
+        android:id="@+id/pesquisaCliente"
+        android:layout_width="380dp"
+        android:layout_height="35dp"
+        android:background="@drawable/list_background"
+        android:hint="Pesquisar..."
+        android:textSize="12sp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <ImageButton
+        android:id="@+id/buttonPesquisarCliente"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/list_background"
+        android:src="@drawable/icon_search"
+        app:layout_constraintEnd_toEndOf="@+id/pesquisaCliente"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" /-->
+
+    <SearchView
+        android:id="@+id/pesquisaCliente"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/list_background"
+        android:queryHint='Pesquisar...'
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+
+    <!-- Lista -->
+    <ListView
+        android:id="@+id/lista_clientes"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:paddingTop="8dp"
+        android:background="@drawable/list_background"
+        android:divider="@color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pesquisaCliente">
+    </ListView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Título Superior -->
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/titulo_clientes"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</FrameLayout>

@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DadosViagem">
+
+    <!--Título-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rectangle"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="    Dados da Viagem    "
+        android:textAlignment="center"
+        android:textColor="@color/green_cadastro"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--Dados do Viagem-->
+    <TextView
+        android:id="@+id/textViewDadosViagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Dados da Viagem"
+        android:textAlignment="center"
+        android:textColor="#106A77"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <!--Hotel-->
+    <TextView
+        android:id="@+id/textViewHotel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Hotel:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDadosViagem" />
+
+    <!--Hotel-->
+    <EditText
+        android:id="@+id/EThotel"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="Ex. Ocean Palace"
+        android:inputType="text"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/textViewHotel"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDadosViagem" />
+
+
+    <!--Cidade-->
+    <TextView
+        android:id="@+id/textViewCidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Cidade:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EThotel" />
+
+    <!--Cidade-->
+    <EditText
+        android:id="@+id/ETcidade"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="Ex. Natal"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/textViewCidade"
+        app:layout_constraintTop_toBottomOf="@+id/EThotel" />
+
+
+    <!--Dados do Voo-->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Dados do Voo "
+        android:textAlignment="center"
+        android:textColor="#106A77"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETcidade"
+        />
+
+
+
+    <!--Localizador-->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Localizador:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <!--Localizador-->
+    <EditText
+        android:id="@+id/ETlocalizador"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="Ex. 000000"
+        android:inputType="text"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+    <!--Numero da Venda-->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Número da Venda:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <!--Localizador-->
+    <EditText
+        android:id="@+id/ETvenda"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="Ex. 00000000"
+        android:inputType="text"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+    <!--Embarque-->
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Embarque"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETvenda" />
+
+    <!--Data Embarque-->
+    <TextView
+        android:id="@+id/textViewDataEmbarque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Data:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <!--Data Embarque-->
+    <EditText
+        android:id="@+id/ETdataEmbarque"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="23/07/2021"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/textViewDataEmbarque"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <!--Hora Embarque-->
+    <TextView
+        android:id="@+id/textViewHoraEmbarque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Horário:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDataEmbarque" />
+
+    <!--Data Embarque-->
+    <EditText
+        android:id="@+id/EThoraEmbarque"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="19:00"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/textViewHoraEmbarque"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDataEmbarque" />
+
+
+    <!--Desembarque-->
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Desembarque"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/ETvenda" />
+
+    <!--Data Embarque-->
+    <TextView
+        android:id="@+id/textViewDataDesembarque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Data:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ETdataEmbarque"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <!--Data Embarque-->
+    <EditText
+        android:id="@+id/ETdataDesembarque"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="30/07/2021"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/textViewDataDesembarque"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <!--Hora Embarque-->
+    <TextView
+        android:id="@+id/textViewHoraDesembarque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Horário:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/EThoraEmbarque"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDataDesembarque" />
+
+    <!--Data Embarque-->
+    <EditText
+        android:id="@+id/EThoraDesembarque"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="13:00"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/textViewHoraDesembarque"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDataDesembarque" />
+
+
+
+    <!-- ______________________________________________________ -->
+
+
+    <!--Dados do Cliente-->
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Outras Informações"
+        android:textAlignment="center"
+        android:textColor="#106A77"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EThoraEmbarque" />
+
+    <!--Valor Venda-->
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Valor da Venda:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <!--Valor Venda-->
+    <EditText
+        android:id="@+id/ETvalorTotal"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="Ex. R$ 2500"
+        android:inputType="text"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <!--Valor Comissao-->
+    <TextView
+        android:id="@+id/textViewValorComissao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Valor da Comissão:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <!--Valor Comissão-->
+    <EditText
+        android:id="@+id/ETvalorComissao"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white_gray"
+        android:hint="Ex. R$ 2500"
+        android:inputType="text"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/textViewValorComissao"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+
+    <!--Observações-->
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="Observações:"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewValorComissao" />
+
+    <!--Observações-->
+    <EditText
+        android:id="@+id/ETobservacoes"
+        android:layout_width="330dp"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/white_gray"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+    <!--Botão Adicionar Pessoas-->
+    <Button
+        android:id="@+id/buttonAdicionarPessoas"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/oval_blue"
+        android:elevation="1dp"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:text="INTEGRANTES"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonContinuar"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/oval"
+        android:elevation="1dp"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:text="Salvar"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCancelar"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/oval_red"
+        android:elevation="1dp"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:text="Excluir"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

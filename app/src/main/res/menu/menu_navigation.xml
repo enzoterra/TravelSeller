@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_clientes"
+        android:icon="@drawable/icon_clientes"
+        android:title="@string/menu_clientes" />
+    <item
+        android:id="@+id/nav_viagens"
+        android:icon="@drawable/icon_plane"
+        android:title="@string/menu_viagens"/>
+    <item
+        android:id="@+id/nav_estatisticas"
+        android:icon="@drawable/icon_calendario"
+        android:title="@string/menu_estatisticas"/>
+
+</menu>

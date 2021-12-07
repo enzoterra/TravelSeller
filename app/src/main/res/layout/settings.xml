@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings" >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!--Titulo-->
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rectangle"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:padding="10dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="Configurações"
+                android:textAlignment="center"
+                android:textColor="@color/green_cadastro"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--Embarque-->
+            <CheckBox
+                android:id="@+id/checkBoxEmbarque"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/edge_distance"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:text="Ida"
+                android:textColor="@color/black_text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+
+            <!--Desembarque-->
+            <CheckBox
+                android:id="@+id/checkBoxDesembarque"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/edge_distance"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:text="Volta"
+                android:textColor="@color/black_text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxEmbarque" />
+
+            <!--1 dia antes-->
+            <CheckBox
+                android:id="@+id/checkBox1dia"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/edge_distance"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:text="1 dia antes"
+                android:textColor="@color/black_text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <!--2 dias antes-->
+            <CheckBox
+                android:id="@+id/checkBox2dias"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/edge_distance"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:text="2 dias antes"
+                android:textColor="@color/black_text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox1dia" />
+
+
+            <!--limpar-->
+            <CheckBox
+                android:id="@+id/checkBoxLimpar"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/edge_distance"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:text="Limpar automaticamente"
+                android:textColor="@color/black_text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+
+            <!--Passar-->
+            <CheckBox
+                android:id="@+id/checkBoxPassar"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/edge_distance"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:text="Salvar quando cadastrar"
+                android:textColor="@color/black_text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <!--Receber 1 hora antes-->
+            <!--CheckBox
+                android:id="@+id/checkBox1hora"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/edge_distance"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:text="1 hora antes"
+                android:textColor="@color/black_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" /-->
+
+
+            <!--Receber lembretes-->
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:paddingStart="@dimen/edge_distance"
+                android:paddingEnd="30dp"
+                android:layout_marginTop="40dp"
+                android:text="Deseja receber lembretes de Ida e Volta dos clientes?"
+                android:textAlignment="textStart"
+                android:textColor="@color/black_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+            <!--Antecedencia do lembrete-->
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:paddingStart="@dimen/edge_distance"
+                android:paddingEnd="30dp"
+                android:text="Com quanto tempo de antecedência deseja receber os lembretes?"
+                android:textAlignment="textStart"
+                android:textColor="@color/black_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxDesembarque" />
+
+
+            <!--Apagar automaticamente-->
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:paddingStart="@dimen/edge_distance"
+                android:paddingEnd="30dp"
+                android:text="Quando acabar a viagem, deseja que as informações sejam limpadas automaticamente?"
+                android:textAlignment="textStart"
+                android:textColor="@color/black_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox2dias" />
+
+
+            <!--Apagar automaticamente 2-->
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:paddingStart="@dimen/edge_distance"
+                android:paddingEnd="30dp"
+                android:text="( Isso não limpará os dados dos clientes, apenas da viagem )"
+                android:textAlignment="textStart"
+                android:textColor="@color/black_text"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <!--Apagar automaticamente 3-->
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:paddingStart="@dimen/edge_distance"
+                android:paddingEnd="30dp"
+                android:text="( As informações continuaram salvas nas Estatísticas )"
+                android:textAlignment="textStart"
+                android:textColor="@color/black_text"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+
+            <!--Passar no cadastro-->
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:paddingStart="@dimen/edge_distance"
+                android:paddingEnd="30dp"
+                android:layout_marginTop="40dp"
+                android:text="Quando fizer um novo cadastro, deseja salvar as informações imediatamente nas estatísticas?"
+                android:textAlignment="textStart"
+                android:textColor="@color/black_text"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxLimpar" />
+
+            <!--Passar no cadastro-->
+            <!--TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:paddingStart="@dimen/edge_distance"
+                android:paddingEnd="30dp"
+                android:layout_marginTop="10dp"
+                android:text="( Caso deixe essa opção marcada, qualquer alteração na viagem deverá ser feita nas estátistícas também )"
+                android:textAlignment="textStart"
+                android:textColor="@color/black_text"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" /-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonSalvarConfiguracoes"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/oval"
+        android:elevation="1dp"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:text="Salvar"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonVoltarConfiguracoes"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/oval_gray"
+        android:elevation="1dp"
+        android:fontFamily="@font/montserrat"
+        android:letterSpacing="0.05"
+        android:text="Voltar"
+        android:textAlignment="center"
+        android:textColor="@color/black_text"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
