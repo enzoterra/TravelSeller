@@ -84,8 +84,6 @@ O ***TravelSeller*** é um aplicativo desenvolvido para ajudar aqueles que são 
 ## ⚙️ Tecnologias usadas
 <div display="flex">
 <img width="100px" src=https://user-images.githubusercontent.com/72806847/145085451-db7bbc2b-f136-4bd0-92d0-05a7802dca51.png> &nbsp &nbsp
-<img width="100px" src=https://user-images.githubusercontent.com/72806847/145085954-d90b40e6-6c7a-4687-82fe-1ed94bd12390.png> &nbsp &nbsp
-<img width="100px" src=https://user-images.githubusercontent.com/72806847/145086681-b8fdfb7e-93f5-4ef2-bf78-14f484a6cab9.png> &nbsp &nbsp
 <img width="100px" src=https://github.com/enzoterra/enzoterra/blob/main/Icons/android.png>
 </div>
 
