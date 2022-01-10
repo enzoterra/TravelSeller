@@ -93,10 +93,10 @@ public class ContinuacaoCadastro extends AppCompatActivity {
             viagem.setDesembarqueData(edtDesembarqueData.getText().toString());
             viagem.setDesembarqueHora(edtDesembarqueHora.getText().toString());
 
-            if(!edtVenda.getText().toString().equals("")) {
+            if (!edtVenda.getText().toString().equals("")) {
                 ArrayList<Estatistica> list = bd.getEstatisticaNumeroViagem(new String[]{edtVenda.getText().toString()});
 
-                if(list.size()!=0) {
+                if (list.size() != 0) {
                     AlertDialog.Builder msgBox = new AlertDialog.Builder(ContinuacaoCadastro.this);
                     msgBox.setTitle("Atenção ...");
                     msgBox.setMessage("Alguma viagem de " + list.get(0).getNomeCliente() + " já possui este número da venda.\n\nDeseja prosseguir?");
@@ -108,7 +108,7 @@ public class ContinuacaoCadastro extends AppCompatActivity {
 
                         Intent intent = new Intent(ContinuacaoCadastro.this, ContinuacaoCadastroFinal.class);
                         intent.putExtra("id", id);
-                        if(primeiraVez.equals("nao")){
+                        if (primeiraVez.equals("nao")) {
                             intent.putExtra("primeiraVezCadastro", "nao");
                         } else {
                             intent.putExtra("primeiraVezCadastro", "sim");
@@ -126,13 +126,27 @@ public class ContinuacaoCadastro extends AppCompatActivity {
 
                     Intent intent = new Intent(ContinuacaoCadastro.this, ContinuacaoCadastroFinal.class);
                     intent.putExtra("id", id);
-                    if(primeiraVez.equals("nao")){
+                    if (primeiraVez.equals("nao")) {
                         intent.putExtra("primeiraVezCadastro", "nao");
                     } else {
                         intent.putExtra("primeiraVezCadastro", "sim");
                     }
                     startActivity(intent);
                 }
+            } else {
+                viagem.setNumeroVenda(edtVenda.getText().toString());
+                bd.salvarViagemPasso2(viagem, id);
+
+                bd.close();
+
+                Intent intent = new Intent(ContinuacaoCadastro.this, ContinuacaoCadastroFinal.class);
+                intent.putExtra("id", id);
+                if (primeiraVez.equals("nao")) {
+                    intent.putExtra("primeiraVezCadastro", "nao");
+                } else {
+                    intent.putExtra("primeiraVezCadastro", "sim");
+                }
+                startActivity(intent);
             }
         });
 

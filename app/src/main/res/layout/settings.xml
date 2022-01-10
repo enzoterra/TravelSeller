@@ -268,7 +268,7 @@
                 android:text="Quando fizer um novo cadastro, deseja salvar as informações imediatamente nas estatísticas?"
                 android:textAlignment="textStart"
                 android:textColor="@color/black_text"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/checkBoxLimpar" />
@@ -292,6 +292,65 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" /-->
+
+            <!--Exportar e Importar Dados-->
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4sp"
+                android:paddingStart="@dimen/edge_distance"
+                android:paddingEnd="30dp"
+                android:layout_marginTop="40dp"
+                android:text="Exportar e Importar Dados"
+                android:textAlignment="textStart"
+                android:textColor="@color/black_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxPassar" />
+
+            <Button
+                android:id="@+id/buttonExportar"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/export_and_import"
+                android:elevation="1dp"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:text="Exportar"
+                android:textAlignment="center"
+                android:textColor="@color/blue_green"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonImportar"
+                />
+
+            <Button
+                android:id="@+id/buttonImportar"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/export_and_import"
+                android:elevation="1dp"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0.05"
+                android:text="Importar"
+                android:textAlignment="center"
+                android:textColor="@color/blue_green"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/textView9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

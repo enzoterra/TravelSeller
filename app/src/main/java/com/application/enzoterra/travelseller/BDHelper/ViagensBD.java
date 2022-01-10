@@ -11,6 +11,8 @@ import com.application.enzoterra.travelseller.Model.Estatistica;
 import com.application.enzoterra.travelseller.Model.Pessoa;
 import com.application.enzoterra.travelseller.Model.Viagens;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class ViagensBD extends SQLiteOpenHelper {
@@ -428,31 +430,8 @@ public class ViagensBD extends SQLiteOpenHelper {
                 "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "numeroVenda", "valorComissao", "valorTotal", "mes", "ano"};
 
         Cursor cursor = getWritableDatabase().query("viagens", columns, null, null, null, null, "ano, mes, embarqueData", null);
-        ArrayList<Viagens> listaViagens = new ArrayList<>();
 
-        while (cursor.moveToNext()) {
-            Viagens viagem = new Viagens();
-            viagem.setId(cursor.getLong(0));
-            viagem.setNomeCliente(cursor.getString(1));
-            viagem.setCpfCliente(cursor.getString(2));
-            viagem.setRgCliente(cursor.getString(3));
-            viagem.setDataNascimentoCliente(cursor.getString(4));
-            viagem.setHotel(cursor.getString(5));
-            viagem.setCidade(cursor.getString(6));
-            viagem.setEmbarqueHora(cursor.getString(7));
-            viagem.setEmbarqueData(cursor.getString(8));
-            viagem.setDesembarqueHora(cursor.getString(9));
-            viagem.setDesembarqueData(cursor.getString(10));
-            viagem.setObservacoes(cursor.getString(11));
-            viagem.setLocalizador(cursor.getString(12));
-            viagem.setNumeroVenda(cursor.getString(13));
-            viagem.setValorComissao(cursor.getDouble(14));
-            viagem.setValorTotal(cursor.getDouble(15));
-
-            listaViagens.add(viagem);
-        }
-        cursor.close();
-        return listaViagens;
+        return returnViagens(cursor);
     }
 
 
@@ -463,31 +442,8 @@ public class ViagensBD extends SQLiteOpenHelper {
                 "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "numeroVenda", "valorComissao", "valorTotal"};
 
         Cursor cursor = getWritableDatabase().query("viagens", columns, null, null, null, null, "nomeCliente ASC", null);
-        ArrayList<Viagens> listaViagens = new ArrayList<>();
 
-        while (cursor.moveToNext()) {
-            Viagens viagem = new Viagens();
-            viagem.setId(cursor.getLong(0));
-            viagem.setNomeCliente(cursor.getString(1));
-            viagem.setCpfCliente(cursor.getString(2));
-            viagem.setRgCliente(cursor.getString(3));
-            viagem.setDataNascimentoCliente(cursor.getString(4));
-            viagem.setHotel(cursor.getString(5));
-            viagem.setCidade(cursor.getString(6));
-            viagem.setEmbarqueHora(cursor.getString(7));
-            viagem.setEmbarqueData(cursor.getString(8));
-            viagem.setDesembarqueHora(cursor.getString(9));
-            viagem.setDesembarqueData(cursor.getString(10));
-            viagem.setObservacoes(cursor.getString(11));
-            viagem.setLocalizador(cursor.getString(12));
-            viagem.setNumeroVenda(cursor.getString(13));
-            viagem.setValorComissao(cursor.getDouble(14));
-            viagem.setValorTotal(cursor.getDouble(15));
-
-            listaViagens.add(viagem);
-        }
-        cursor.close();
-        return listaViagens;
+        return returnViagens(cursor);
     }
 
 
@@ -513,6 +469,29 @@ public class ViagensBD extends SQLiteOpenHelper {
         return listaClientes;
     }
 
+    //Receber Lista Total Integrantes
+    public ArrayList<Pessoa> getListaAllIntegrantes() {
+        String[] columns = {"id", "nome", "cpf", "rg", "dataNascimento", "fk_viagens_id"};
+
+        Cursor cursor = getWritableDatabase().query("clientes", columns, null, null, null, null, null, null);
+        ArrayList<Pessoa> listaClientes = new ArrayList<>();
+
+        while (cursor.moveToNext()) {
+            Pessoa pessoa = new Pessoa();
+            pessoa.setId(cursor.getLong(0));
+            pessoa.setNome(cursor.getString(1));
+            pessoa.setCpf(cursor.getString(2));
+            pessoa.setRg(cursor.getString(3));
+            pessoa.setDataNascimento(cursor.getString(4));
+            pessoa.setFkViagens((cursor.getInt(5)));
+
+            listaClientes.add(pessoa);
+        }
+        cursor.close();
+        return listaClientes;
+    }
+
+
     //Receber Lista de Clientes com Pesquisa
     public ArrayList<Viagens> getListaClientesPesquisa(String nome) {
 
@@ -520,32 +499,10 @@ public class ViagensBD extends SQLiteOpenHelper {
                 "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "numeroVenda", "valorComissao", "valorTotal"};
 
         Cursor cursor = getWritableDatabase().query("viagens", columns, "UPPER(nomeCliente) = '" + nome.toUpperCase() +"'", null, null, null, null, null);
-        ArrayList<Viagens> listaClientes = new ArrayList<>();
 
-        while (cursor.moveToNext()) {
-            Viagens viagem = new Viagens();
-            viagem.setId(cursor.getLong(0));
-            viagem.setNomeCliente(cursor.getString(1));
-            viagem.setCpfCliente(cursor.getString(2));
-            viagem.setRgCliente(cursor.getString(3));
-            viagem.setDataNascimentoCliente(cursor.getString(4));
-            viagem.setHotel(cursor.getString(5));
-            viagem.setCidade(cursor.getString(6));
-            viagem.setEmbarqueHora(cursor.getString(7));
-            viagem.setEmbarqueData(cursor.getString(8));
-            viagem.setDesembarqueHora(cursor.getString(9));
-            viagem.setDesembarqueData(cursor.getString(10));
-            viagem.setObservacoes(cursor.getString(11));
-            viagem.setLocalizador(cursor.getString(12));
-            viagem.setNumeroVenda(cursor.getString(13));
-            viagem.setValorComissao(cursor.getDouble(14));
-            viagem.setValorTotal(cursor.getDouble(15));
-
-            listaClientes.add(viagem);
-        }
-        cursor.close();
-        return listaClientes;
+        return returnViagens(cursor);
     }
+
 
     //Receber Lista de Clientes com ID
     public ArrayList<Viagens> getListaClientesID(int id) {
@@ -611,6 +568,7 @@ public class ViagensBD extends SQLiteOpenHelper {
         return lista;
     }
 
+
     //Receber Lista de Viagens Estatisticas
     public ArrayList<Estatistica> getListaViagensEstatisticas(String mes, int ano) {
 
@@ -619,33 +577,19 @@ public class ViagensBD extends SQLiteOpenHelper {
 
         Cursor cursor = getWritableDatabase().query("estatisticas", columns, "mes = '" + mes +"'AND ano = " + ano, null, null, null, "nomeCliente ASC", null);
 
-        ArrayList<Estatistica> lista = new ArrayList<>();
+        return returnEstatisticas(cursor);
+    }
 
-        while (cursor.moveToNext()) {
-            Estatistica estatistica = new Estatistica();
-            estatistica.setId(cursor.getLong(0));
-            estatistica.setNomeCliente(cursor.getString(1));
-            estatistica.setCpfCliente(cursor.getString(2));
-            estatistica.setRgCliente(cursor.getString(3));
-            estatistica.setDataNascimentoCliente(cursor.getString(4));
-            estatistica.setHotel(cursor.getString(5));
-            estatistica.setCidade(cursor.getString(6));
-            estatistica.setEmbarqueHora(cursor.getString(7));
-            estatistica.setEmbarqueData(cursor.getString(8));
-            estatistica.setDesembarqueHora(cursor.getString(9));
-            estatistica.setDesembarqueData(cursor.getString(10));
-            estatistica.setObservacoes(cursor.getString(11));
-            estatistica.setLocalizador(cursor.getString(12));
-            estatistica.setNumeroVenda(cursor.getString(13));
-            estatistica.setValorComissao(cursor.getDouble(14));
-            estatistica.setValorTotal(cursor.getDouble(15));
-            estatistica.setAno(cursor.getInt(16));
-            estatistica.setMes(cursor.getString(17));
 
-            lista.add(estatistica);
-        }
-        cursor.close();
-        return lista;
+    //Receber Lista de Viagens Estatisticas
+    public ArrayList<Estatistica> getListaAllEstatisticas() {
+
+        String[] columns = {"id", "nomeCliente", "cpfCliente", "rgCliente", "dataNascimentoCliente", "hotel", "cidade", "embarqueHora",
+                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "numeroVenda", "valorComissao", "valorTotal", "ano", "mes"};
+
+        Cursor cursor = getWritableDatabase().query("estatisticas", columns, null, null, null, null, null, null);
+
+        return returnEstatisticas(cursor);
     }
 
 
@@ -671,33 +615,7 @@ public class ViagensBD extends SQLiteOpenHelper {
 
         Cursor cursor = getWritableDatabase().query("estatisticas", columns, where, dados, null, null, null, null);
 
-        ArrayList<Estatistica> lista = new ArrayList<>();
-
-        while (cursor.moveToNext()) {
-            Estatistica estatistica = new Estatistica();
-            estatistica.setId(cursor.getLong(0));
-            estatistica.setNomeCliente(cursor.getString(1));
-            estatistica.setCpfCliente(cursor.getString(2));
-            estatistica.setRgCliente(cursor.getString(3));
-            estatistica.setDataNascimentoCliente(cursor.getString(4));
-            estatistica.setHotel(cursor.getString(5));
-            estatistica.setCidade(cursor.getString(6));
-            estatistica.setEmbarqueHora(cursor.getString(7));
-            estatistica.setEmbarqueData(cursor.getString(8));
-            estatistica.setDesembarqueHora(cursor.getString(9));
-            estatistica.setDesembarqueData(cursor.getString(10));
-            estatistica.setObservacoes(cursor.getString(11));
-            estatistica.setLocalizador(cursor.getString(12));
-            estatistica.setNumeroVenda(cursor.getString(13));
-            estatistica.setValorComissao(cursor.getDouble(14));
-            estatistica.setValorTotal(cursor.getDouble(15));
-            estatistica.setAno(cursor.getInt(16));
-            estatistica.setMes(cursor.getString(17));
-
-            lista.add(estatistica);
-        }
-        cursor.close();
-        return lista;
+        return returnEstatisticas(cursor);
     }
 
     //Receber Lista de Viagens Estatisticas
@@ -724,6 +642,67 @@ public class ViagensBD extends SQLiteOpenHelper {
         return lista;
     }
 
+
+    //Retornar lista de viagens
+    public ArrayList<Viagens> returnViagens(Cursor cursor){
+        ArrayList<Viagens> listaClientes = new ArrayList<>();
+
+        while (cursor.moveToNext()) {
+            Viagens viagem = new Viagens();
+            viagem.setId(cursor.getLong(0));
+            viagem.setNomeCliente(cursor.getString(1));
+            viagem.setCpfCliente(cursor.getString(2));
+            viagem.setRgCliente(cursor.getString(3));
+            viagem.setDataNascimentoCliente(cursor.getString(4));
+            viagem.setHotel(cursor.getString(5));
+            viagem.setCidade(cursor.getString(6));
+            viagem.setEmbarqueHora(cursor.getString(7));
+            viagem.setEmbarqueData(cursor.getString(8));
+            viagem.setDesembarqueHora(cursor.getString(9));
+            viagem.setDesembarqueData(cursor.getString(10));
+            viagem.setObservacoes(cursor.getString(11));
+            viagem.setLocalizador(cursor.getString(12));
+            viagem.setNumeroVenda(cursor.getString(13));
+            viagem.setValorComissao(cursor.getDouble(14));
+            viagem.setValorTotal(cursor.getDouble(15));
+
+            listaClientes.add(viagem);
+        }
+        cursor.close();
+        return listaClientes;
+    }
+
+
+    //Retornar lista de viagens
+    public ArrayList<Estatistica> returnEstatisticas(Cursor cursor){
+        ArrayList<Estatistica> lista = new ArrayList<>();
+
+        while (cursor.moveToNext()) {
+            Estatistica estatistica = new Estatistica();
+            estatistica.setId(cursor.getLong(0));
+            estatistica.setNomeCliente(cursor.getString(1));
+            estatistica.setCpfCliente(cursor.getString(2));
+            estatistica.setRgCliente(cursor.getString(3));
+            estatistica.setDataNascimentoCliente(cursor.getString(4));
+            estatistica.setHotel(cursor.getString(5));
+            estatistica.setCidade(cursor.getString(6));
+            estatistica.setEmbarqueHora(cursor.getString(7));
+            estatistica.setEmbarqueData(cursor.getString(8));
+            estatistica.setDesembarqueHora(cursor.getString(9));
+            estatistica.setDesembarqueData(cursor.getString(10));
+            estatistica.setObservacoes(cursor.getString(11));
+            estatistica.setLocalizador(cursor.getString(12));
+            estatistica.setNumeroVenda(cursor.getString(13));
+            estatistica.setValorComissao(cursor.getDouble(14));
+            estatistica.setValorTotal(cursor.getDouble(15));
+            estatistica.setAno(cursor.getInt(16));
+            estatistica.setMes(cursor.getString(17));
+
+            lista.add(estatistica);
+        }
+        cursor.close();
+        return lista;
+    }
 
 
     public String getNomePrincipal(int id){

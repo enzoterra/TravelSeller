@@ -258,7 +258,7 @@ public class Estatisticas extends AppCompatActivity {
                 subTitulo2Lista.setText("clique em algum ano da lista");
                 carregarListaAnos();
             }
-            return true;
+            return false;
         }
         return super.onKeyDown(i, keyEvent);
     }

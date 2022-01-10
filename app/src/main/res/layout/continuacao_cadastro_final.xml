@@ -175,7 +175,7 @@
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp"
                 android:background="@drawable/edit_texts"
-                android:inputType="textAutoCorrect"
+                android:inputType="textMultiLine"
                 android:gravity="top"
                 android:textSize="@dimen/text_size"
                 app:layout_constraintEnd_toEndOf="parent"

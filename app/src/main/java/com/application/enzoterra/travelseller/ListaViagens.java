@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -47,23 +48,26 @@ public class ListaViagens extends AppCompatActivity {
         //Verificar Notificações
         //Definir a hora de início
         Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, 8);
-        calendar.set(Calendar.MINUTE, 0);
-        calendar.set(Calendar.SECOND, 0);
 
-
-        boolean alarmUp = (PendingIntent.getBroadcast(context, 0,
-                new Intent(context, NotificationCreator.class), PendingIntent.FLAG_NO_CREATE) != null);
-
+        //boolean alarmUp = (PendingIntent.getBroadcast(context, 0, new Intent(context, NotificationCreator.class), PendingIntent.FLAG_NO_CREATE) != null);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
-        //Definir o alarme para acontecer todos os dias às 8 horas
-        if(!alarmUp){
-            PendingIntent notificacaoPendingIntent = PendingIntent.getBroadcast(context,0, new Intent(context, NotificationCreator.class),0);
+        PendingIntent pendingIntent =
+                PendingIntent.getBroadcast(context, 0, new Intent(context, NotificationCreator.class), 0);
 
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                    AlarmManager.INTERVAL_DAY, notificacaoPendingIntent);
-        }
+        //Cancela um possível alarme existente
+        alarmManager.cancel(pendingIntent);
+
+        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+
+        /*if(pendingIntent != null){
+            PendingIntent notificacaoPendingIntent = PendingIntent.getBroadcast(context,0, new Intent(context, NotificationCreator.class),0);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, notificacaoPendingIntent);
+            alarmManager.cancel(pendingIntent);
+        }*/
 
 
 
