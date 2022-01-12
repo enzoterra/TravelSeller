@@ -48,6 +48,7 @@ public class AlterarIntegrantes extends AppCompatActivity {
         String dataNascimento = (String) getIntent.getSerializableExtra("dataNascimento");
         String tela = (String) getIntent.getSerializableExtra("tela");
 
+
         //Se a tela anterior a lista for a de editar viagem, receberá os dados
         if(tela.equals("fragmento")){
             dados = getIntent.getStringArrayExtra("dados");
