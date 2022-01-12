@@ -18,6 +18,7 @@ O ***TravelSeller*** é um aplicativo desenvolvido para ajudar aqueles que são 
 - Relatório anual e mensal das viagens, incluindo o valor da comissão adquirido
 - Notificações para lembrete das viagens
 - Tela de configurações
+- Exportar e importar dados
 
 </br>
 
