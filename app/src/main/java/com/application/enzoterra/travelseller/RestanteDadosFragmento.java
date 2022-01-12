@@ -16,7 +16,7 @@ import android.widget.EditText;
 
 public class RestanteDadosFragmento extends Fragment{
 
-    String cidade, hotel, localizador, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes;
+    String cidade, hotel, localizador, companhiaAerea, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes;
     int id;
     double valorTotal, valorComissao;
     EditText edtObservacoes, edtValorTotal, edtComissao;
@@ -28,15 +28,16 @@ public class RestanteDadosFragmento extends Fragment{
         this.cidade = dados[1];
         this.hotel = dados[2];
         this.localizador = dados[3];
-        this.numeroVenda = dados[4];
-        this.embarqueHora = dados[5];
-        this.embarqueData = dados[6];
-        this.desembarqueHora = dados[7];
-        this.desembarqueData = dados[8];
-        this.observacoes = dados[9];
-        this.valorTotal = Double.parseDouble(dados[10]);
-        this.valorComissao = Double.parseDouble(dados[11]);
-        this.telaPrincipal = dados[12];
+        this.companhiaAerea = dados[4];
+        this.numeroVenda = dados[5];
+        this.embarqueHora = dados[6];
+        this.embarqueData = dados[7];
+        this.desembarqueHora = dados[8];
+        this.desembarqueData = dados[9];
+        this.observacoes = dados[10];
+        this.valorTotal = Double.parseDouble(dados[11]);
+        this.valorComissao = Double.parseDouble(dados[12]);
+        this.telaPrincipal = dados[13];
     }
 
 
@@ -78,14 +79,15 @@ public class RestanteDadosFragmento extends Fragment{
             intent.putExtra("cidade", dadosActivity[1]);
             intent.putExtra("hotel", dadosActivity[2]);
             intent.putExtra("localizador", dadosActivity[3]);
-            intent.putExtra("numeroVenda", dadosActivity[4]);
-            intent.putExtra("embarqueHora", dadosActivity[5]);
-            intent.putExtra("embarqueData", dadosActivity[6]);
-            intent.putExtra("desembarqueHora", dadosActivity[7]);
-            intent.putExtra("desembarqueData", dadosActivity[8]);
-            intent.putExtra("observacoes", dados[9]);
-            intent.putExtra("valorTotal", dados[10]);
-            intent.putExtra("valorComissao", dados[11]);
+            intent.putExtra("companhiaAerea", dadosActivity[4]);
+            intent.putExtra("numeroVenda", dadosActivity[5]);
+            intent.putExtra("embarqueHora", dadosActivity[6]);
+            intent.putExtra("embarqueData", dadosActivity[7]);
+            intent.putExtra("desembarqueHora", dadosActivity[8]);
+            intent.putExtra("desembarqueData", dadosActivity[9]);
+            intent.putExtra("observacoes", dados[10]);
+            intent.putExtra("valorTotal", dados[11]);
+            intent.putExtra("valorComissao", dados[12]);
             intent.putExtra("telaPrincipal", telaPrincipal);
 
             startActivity(intent);
@@ -99,7 +101,7 @@ public class RestanteDadosFragmento extends Fragment{
         observacoes = edtObservacoes.getText().toString();
         valorTotal = Double.parseDouble(edtValorTotal.getText().toString());
         valorComissao = Double.parseDouble(edtComissao.getText().toString());
-        return new String[]{String.valueOf(id), cidade, hotel, localizador, numeroVenda,
+        return new String[]{String.valueOf(id), cidade, hotel, localizador, companhiaAerea, numeroVenda,
                 embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, String.valueOf(valorTotal), String.valueOf(valorComissao)};
     }
 

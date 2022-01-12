@@ -5,7 +5,6 @@ import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.widget.Button;
@@ -21,15 +20,10 @@ import com.application.enzoterra.travelseller.Model.Viagens;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,8 +34,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class Settings extends AppCompatActivity {
 
@@ -153,11 +145,9 @@ public class Settings extends AppCompatActivity {
 
         //Button Voltar
         Button voltar = findViewById(R.id.buttonVoltarConfiguracoes);
-        voltar.setOnClickListener(view -> {
-                    startActivity(new Intent(Settings.this, ListaViagens.class));
-                }
-        );
+        voltar.setOnClickListener(view -> startActivity(new Intent(Settings.this, ListaViagens.class)));
     }
+
 
     public void salvarConfiguracoes(){
         if(checkBoxEmbarque.isChecked()){
@@ -246,14 +236,15 @@ public class Settings extends AppCompatActivity {
                         viagem.setCidade(nextLineViagens[5]);
                         viagem.setHotel(nextLineViagens[6]);
                         viagem.setLocalizador(nextLineViagens[7]);
-                        viagem.setNumeroVenda(nextLineViagens[8]);
-                        viagem.setEmbarqueHora(nextLineViagens[9]);
-                        viagem.setEmbarqueData(nextLineViagens[10]);
-                        viagem.setDesembarqueHora(nextLineViagens[11]);
-                        viagem.setDesembarqueData(nextLineViagens[12]);
-                        viagem.setObservacoes(nextLineViagens[13]);
-                        viagem.setValorTotal(Double.parseDouble(nextLineViagens[14]));
-                        viagem.setValorComissao(Double.parseDouble(nextLineViagens[15]));
+                        viagem.setCompanhiaAerea(nextLineViagens[8]);
+                        viagem.setNumeroVenda(nextLineViagens[9]);
+                        viagem.setEmbarqueHora(nextLineViagens[10]);
+                        viagem.setEmbarqueData(nextLineViagens[11]);
+                        viagem.setDesembarqueHora(nextLineViagens[12]);
+                        viagem.setDesembarqueData(nextLineViagens[13]);
+                        viagem.setObservacoes(nextLineViagens[14]);
+                        viagem.setValorTotal(Double.parseDouble(nextLineViagens[15]));
+                        viagem.setValorComissao(Double.parseDouble(nextLineViagens[16]));
                         long id = bd.salvarViagem(viagem);
 
 
@@ -289,16 +280,17 @@ public class Settings extends AppCompatActivity {
                         estatistica.setCidade(nextLineEstatisticas[5]);
                         estatistica.setHotel(nextLineEstatisticas[6]);
                         estatistica.setLocalizador(nextLineEstatisticas[7]);
-                        estatistica.setNumeroVenda(nextLineEstatisticas[8]);
-                        estatistica.setEmbarqueHora(nextLineEstatisticas[9]);
-                        estatistica.setEmbarqueData(nextLineEstatisticas[10]);
-                        estatistica.setDesembarqueHora(nextLineEstatisticas[11]);
-                        estatistica.setDesembarqueData(nextLineEstatisticas[12]);
-                        estatistica.setObservacoes(nextLineEstatisticas[13]);
-                        estatistica.setValorTotal(Double.parseDouble(nextLineEstatisticas[14]));
-                        estatistica.setValorComissao(Double.parseDouble(nextLineEstatisticas[15]));
-                        estatistica.setAno(Integer.parseInt(nextLineEstatisticas[16]));
-                        estatistica.setMes(nextLineEstatisticas[17]);
+                        estatistica.setCompanhiaAerea(nextLineEstatisticas[8]);
+                        estatistica.setNumeroVenda(nextLineEstatisticas[9]);
+                        estatistica.setEmbarqueHora(nextLineEstatisticas[10]);
+                        estatistica.setEmbarqueData(nextLineEstatisticas[11]);
+                        estatistica.setDesembarqueHora(nextLineEstatisticas[12]);
+                        estatistica.setDesembarqueData(nextLineEstatisticas[13]);
+                        estatistica.setObservacoes(nextLineEstatisticas[14]);
+                        estatistica.setValorTotal(Double.parseDouble(nextLineEstatisticas[15]));
+                        estatistica.setValorComissao(Double.parseDouble(nextLineEstatisticas[16]));
+                        estatistica.setAno(Integer.parseInt(nextLineEstatisticas[17]));
+                        estatistica.setMes(nextLineEstatisticas[18]);
                         bd.salvarViagemEstatisticas(estatistica);
                     }
                 }
@@ -368,7 +360,7 @@ public class Settings extends AppCompatActivity {
 
 
     public void exportarViagens(File arquivoViagens){
-        CSVWriter writerViagens = null;
+        CSVWriter writerViagens;
 
         try {
             writerViagens = new CSVWriter(new FileWriter(arquivoViagens));
@@ -386,6 +378,7 @@ public class Settings extends AppCompatActivity {
                     String cidade = viagem.getCidade();
                     String hotel = viagem.getHotel();
                     String localizador = viagem.getLocalizador();
+                    String companhiaAerea = viagem.getCompanhiaAerea();
                     String numeroVenda = viagem.getNumeroVenda();
                     String embarqueHora = viagem.getEmbarqueHora();
                     String embarqueData = viagem.getEmbarqueData();
@@ -395,7 +388,7 @@ public class Settings extends AppCompatActivity {
                     double valorTotal = viagem.getValorTotal();
                     double valorComissao = viagem.getValorComissao();
 
-                    String[] dadosViagem = new String[]{String.valueOf(id), nome, cpf, rg, dataNascimento, cidade, hotel, localizador, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, String.valueOf(valorTotal), String.valueOf(valorComissao)};
+                    String[] dadosViagem = new String[]{String.valueOf(id), nome, cpf, rg, dataNascimento, cidade, hotel, localizador, companhiaAerea, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, String.valueOf(valorTotal), String.valueOf(valorComissao)};
 
                     dados.add(dadosViagem);
                 }
@@ -411,7 +404,7 @@ public class Settings extends AppCompatActivity {
 
 
     public void exportarIntegrantes(File arquivoIntegrantes){
-        CSVWriter writerIntegrantes = null;
+        CSVWriter writerIntegrantes;
 
         try {
             writerIntegrantes = new CSVWriter(new FileWriter(arquivoIntegrantes));
@@ -444,7 +437,7 @@ public class Settings extends AppCompatActivity {
 
 
     public void exportarEstatisticas(File arquivoEstatisticas){
-        CSVWriter writerEstatisticas = null;
+        CSVWriter writerEstatisticas;
 
         try {
             writerEstatisticas = new CSVWriter(new FileWriter(arquivoEstatisticas));
@@ -462,6 +455,7 @@ public class Settings extends AppCompatActivity {
                     String cidade = estatisticas.getCidade();
                     String hotel = estatisticas.getHotel();
                     String localizador = estatisticas.getLocalizador();
+                    String companhiaAerea = estatisticas.getCompanhiaAerea();
                     String numeroVenda = estatisticas.getNumeroVenda();
                     String embarqueHora = estatisticas.getEmbarqueHora();
                     String embarqueData = estatisticas.getEmbarqueData();
@@ -473,7 +467,7 @@ public class Settings extends AppCompatActivity {
                     int ano = estatisticas.getAno();
                     String mes = estatisticas.getMes();
 
-                    String[] dadosEstatisticas = new String[]{String.valueOf(id), nome, cpf, rg, dataNascimento, cidade, hotel, localizador, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, String.valueOf(valorTotal), String.valueOf(valorComissao), String.valueOf(ano), mes};
+                    String[] dadosEstatisticas = new String[]{String.valueOf(id), nome, cpf, rg, dataNascimento, cidade, hotel, localizador, companhiaAerea, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, String.valueOf(valorTotal), String.valueOf(valorComissao), String.valueOf(ano), mes};
 
                     dados.add(dadosEstatisticas);
                 }

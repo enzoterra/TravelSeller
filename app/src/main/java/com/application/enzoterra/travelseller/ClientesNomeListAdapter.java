@@ -23,11 +23,6 @@ public class ClientesNomeListAdapter extends ArrayAdapter<String> {
         super(context, R.layout.linha_pessoa, elementos);
         this.context = context;
         this.elementos = elementos;
-        /*for(int i = 0; i < this.elementos.size(); i++){
-            if (this.nomes != null) {
-                this.nomes.set(i, this.elementos.get(i).getNomeCliente());
-            }
-        }*/
     }
 
 

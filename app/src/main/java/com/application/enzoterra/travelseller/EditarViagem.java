@@ -48,6 +48,7 @@ public class EditarViagem extends AppCompatActivity implements InterfaceComunica
         final String hotel = (String) getIntent.getSerializableExtra("hotel");
         final String cidade = (String) getIntent.getSerializableExtra("cidade");
         final String localizador = (String) getIntent.getSerializableExtra("localizador");
+        final String companhiaAerea = (String) getIntent.getSerializableExtra("companhiaAerea");
         final String numeroVenda = (String) getIntent.getSerializableExtra("numeroVenda");
         final String embarqueHora = (String) getIntent.getSerializableExtra("embarqueHora");
         final String embarqueData = (String) getIntent.getSerializableExtra("embarqueData");
@@ -59,7 +60,7 @@ public class EditarViagem extends AppCompatActivity implements InterfaceComunica
         tela = (String) getIntent.getSerializableExtra("tela");
         String telaPrincipal = tela;
 
-        dados = new String[]{String.valueOf(id), cidade, hotel, localizador, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, String.valueOf(valorTotal), String.valueOf(valorComissao), telaPrincipal};
+        dados = new String[]{String.valueOf(id), cidade, hotel, localizador, companhiaAerea, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, String.valueOf(valorTotal), String.valueOf(valorComissao), telaPrincipal};
         passarValores();
 
 
@@ -124,14 +125,15 @@ public class EditarViagem extends AppCompatActivity implements InterfaceComunica
                 viagem.setCidade(dados[1]);
                 viagem.setHotel(dados[2]);
                 viagem.setLocalizador(dados[3]);
-                viagem.setNumeroVenda(dados[4]);
-                viagem.setEmbarqueHora(dados[5]);
-                viagem.setEmbarqueData(dados[6]);
-                viagem.setDesembarqueHora(dados[7]);
-                viagem.setDesembarqueData(dados[8]);
-                viagem.setObservacoes(dados[9]);
-                viagem.setValorTotal(Double.parseDouble(dados[10]));
-                viagem.setValorComissao(Double.parseDouble(dados[11]));
+                viagem.setCompanhiaAerea(dados[4]);
+                viagem.setNumeroVenda(dados[5]);
+                viagem.setEmbarqueHora(dados[6]);
+                viagem.setEmbarqueData(dados[7]);
+                viagem.setDesembarqueHora(dados[8]);
+                viagem.setDesembarqueData(dados[9]);
+                viagem.setObservacoes(dados[10]);
+                viagem.setValorTotal(Double.parseDouble(dados[11]));
+                viagem.setValorComissao(Double.parseDouble(dados[12]));
 
                 bd.alterarViagem(viagem, id);
 
@@ -159,14 +161,15 @@ public class EditarViagem extends AppCompatActivity implements InterfaceComunica
                 estatistica.setCidade(dados[1]);
                 estatistica.setHotel(dados[2]);
                 estatistica.setLocalizador(dados[3]);
-                estatistica.setNumeroVenda(dados[4]);
-                estatistica.setEmbarqueHora(dados[5]);
-                estatistica.setEmbarqueData(dados[6]);
-                estatistica.setDesembarqueHora(dados[7]);
-                estatistica.setDesembarqueData(dados[8]);
-                estatistica.setObservacoes(dados[9]);
-                estatistica.setValorTotal(Double.parseDouble(dados[10]));
-                estatistica.setValorComissao(Double.parseDouble(dados[11]));
+                estatistica.setCompanhiaAerea(dados[4]);
+                estatistica.setNumeroVenda(dados[5]);
+                estatistica.setEmbarqueHora(dados[6]);
+                estatistica.setEmbarqueData(dados[7]);
+                estatistica.setDesembarqueHora(dados[8]);
+                estatistica.setDesembarqueData(dados[9]);
+                estatistica.setObservacoes(dados[10]);
+                estatistica.setValorTotal(Double.parseDouble(dados[11]));
+                estatistica.setValorComissao(Double.parseDouble(dados[12]));
                 estatistica.setAno(ano);
                 estatistica.setMes(mes);
 
@@ -207,14 +210,15 @@ public class EditarViagem extends AppCompatActivity implements InterfaceComunica
                 estatistica.setCidade(dados[1]);
                 estatistica.setHotel(dados[2]);
                 estatistica.setLocalizador(dados[3]);
-                estatistica.setNumeroVenda(dados[4]);
-                estatistica.setEmbarqueHora(dados[5]);
-                estatistica.setEmbarqueData(dados[6]);
-                estatistica.setDesembarqueHora(dados[7]);
-                estatistica.setDesembarqueData(dados[8]);
-                estatistica.setObservacoes(dados[9]);
-                estatistica.setValorTotal(Double.parseDouble(dados[10]));
-                estatistica.setValorComissao(Double.parseDouble(dados[11]));
+                estatistica.setCompanhiaAerea(dados[4]);
+                estatistica.setNumeroVenda(dados[5]);
+                estatistica.setEmbarqueHora(dados[6]);
+                estatistica.setEmbarqueData(dados[7]);
+                estatistica.setDesembarqueHora(dados[8]);
+                estatistica.setDesembarqueData(dados[9]);
+                estatistica.setObservacoes(dados[10]);
+                estatistica.setValorTotal(Double.parseDouble(dados[11]));
+                estatistica.setValorComissao(Double.parseDouble(dados[12]));
                 estatistica.setAno(ano);
                 estatistica.setMes(mes);
 
@@ -321,6 +325,7 @@ public class EditarViagem extends AppCompatActivity implements InterfaceComunica
                 estatistica.setCidade(list.get(0).getCidade());
                 estatistica.setHotel(list.get(0).getHotel());
                 estatistica.setLocalizador(list.get(0).getLocalizador());
+                estatistica.setCompanhiaAerea(list.get(0).getCompanhiaAerea());
                 estatistica.setNumeroVenda(list.get(0).getNumeroVenda());
                 estatistica.setEmbarqueHora(list.get(0).getEmbarqueHora());
                 estatistica.setEmbarqueData(list.get(0).getEmbarqueData());
@@ -377,14 +382,15 @@ public class EditarViagem extends AppCompatActivity implements InterfaceComunica
         dados[6] = dadosVoo[6];
         dados[7] = dadosVoo[7];
         dados[8] = dadosVoo[8];
+        dados[9] = dadosVoo[9];
         fragmentAdapter.setDadosVoo(dadosVoo);
     }
 
     public void setRestanteDados(String[] restanteDados) {
         this.restanteDados = restanteDados;
-        dados[9] = restanteDados[9];
         dados[10] = restanteDados[10];
         dados[11] = restanteDados[11];
+        dados[12] = restanteDados[12];
         fragmentAdapter.setRestanteDados(restanteDados);
     }
 

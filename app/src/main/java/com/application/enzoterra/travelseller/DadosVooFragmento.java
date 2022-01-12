@@ -13,10 +13,10 @@ import android.widget.EditText;
 public class DadosVooFragmento extends Fragment{
 
     //Criação das Variáveis
-    String cidade, hotel, localizador, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes;
+    String cidade, hotel, localizador, companhiaAerea, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes;
     int id;
     double valorTotal, valorComissao;
-    EditText edtCidade, edtHotel, edtLocalizador, edtNumeroVenda, edtEmbarqueData, edtEmbarqueHora, edtDesembarqueData, edtDesembarqueHora;
+    EditText edtCidade, edtHotel, edtLocalizador, edtCompanhiaAerea, edtNumeroVenda, edtEmbarqueData, edtEmbarqueHora, edtDesembarqueData, edtDesembarqueHora;
     InterfaceComunicacao interfaceListener;
 
 
@@ -25,14 +25,15 @@ public class DadosVooFragmento extends Fragment{
         this.cidade = dados[1];
         this.hotel = dados[2];
         this.localizador = dados[3];
-        this.numeroVenda = dados[4];
-        this.embarqueHora = dados[5];
-        this.embarqueData = dados[6];
-        this.desembarqueHora = dados[7];
-        this.desembarqueData = dados[8];
-        this.observacoes = dados[9];
-        this.valorTotal = Double.parseDouble(dados[10]);
-        this.valorComissao = Double.parseDouble(dados[11]);
+        this.companhiaAerea = dados[4];
+        this.numeroVenda = dados[5];
+        this.embarqueHora = dados[6];
+        this.embarqueData = dados[7];
+        this.desembarqueHora = dados[8];
+        this.desembarqueData = dados[9];
+        this.observacoes = dados[10];
+        this.valorTotal = Double.parseDouble(dados[11]);
+        this.valorComissao = Double.parseDouble(dados[12]);
     }
 
 
@@ -55,6 +56,7 @@ public class DadosVooFragmento extends Fragment{
         edtCidade = view.findViewById(R.id.ETcidadeFragment);
         edtHotel = view.findViewById(R.id.EThotelFragment);
         edtLocalizador = view.findViewById(R.id.ETlocalizadorFragment);
+        edtCompanhiaAerea = view.findViewById(R.id.ETcompanhiaAerea);
         edtNumeroVenda = view.findViewById(R.id.ETvendaFragment);
         edtEmbarqueData = view.findViewById(R.id.ETdataEmbarqueFragment);
         edtEmbarqueHora = view.findViewById(R.id.EThoraEmbarqueFragment);
@@ -64,6 +66,7 @@ public class DadosVooFragmento extends Fragment{
         edtCidade.setText(cidade);
         edtHotel.setText(hotel);
         edtLocalizador.setText(localizador);
+        edtCompanhiaAerea.setText(companhiaAerea);
         edtNumeroVenda.setText(numeroVenda);
         edtEmbarqueData.setText(embarqueData);
         edtEmbarqueHora.setText(embarqueHora);
@@ -83,12 +86,13 @@ public class DadosVooFragmento extends Fragment{
         cidade = edtCidade.getText().toString();
         hotel = edtHotel.getText().toString();
         localizador = edtLocalizador.getText().toString();
+        companhiaAerea = edtCompanhiaAerea.getText().toString();
         numeroVenda = edtNumeroVenda.getText().toString();
         embarqueData = edtEmbarqueData.getText().toString();
         embarqueHora = edtEmbarqueHora.getText().toString();
         desembarqueData = edtDesembarqueData.getText().toString();
         desembarqueHora = edtDesembarqueHora.getText().toString();
-        return new String[]{String.valueOf(id), cidade, hotel, localizador, numeroVenda,
+        return new String[]{String.valueOf(id), cidade, hotel, localizador, companhiaAerea, numeroVenda,
                 embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, String.valueOf(valorTotal), String.valueOf(valorComissao)};
     }
 

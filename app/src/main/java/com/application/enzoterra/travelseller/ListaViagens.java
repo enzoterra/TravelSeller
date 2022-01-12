@@ -84,6 +84,7 @@ public class ListaViagens extends AppCompatActivity {
             intent.putExtra("hotel", (ListaViagens.this.list_viagens.get(i)).getHotel());
             intent.putExtra("cidade", (ListaViagens.this.list_viagens.get(i)).getCidade());
             intent.putExtra("localizador", (ListaViagens.this.list_viagens.get(i)).getLocalizador());
+            intent.putExtra("companhiaAerea", (ListaViagens.this.list_viagens.get(i)).getCompanhiaAerea());
             intent.putExtra("numeroVenda", (ListaViagens.this.list_viagens.get(i)).getNumeroVenda());
             intent.putExtra("embarqueHora", (ListaViagens.this.list_viagens.get(i)).getEmbarqueHora());
             intent.putExtra("embarqueData", (ListaViagens.this.list_viagens.get(i)).getEmbarqueData());

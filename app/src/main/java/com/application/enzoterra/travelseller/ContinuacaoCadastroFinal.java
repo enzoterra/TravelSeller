@@ -121,6 +121,7 @@ public class ContinuacaoCadastroFinal extends AppCompatActivity {
                 estatistica.setHotel(listaViagem.get(0).getHotel());
                 estatistica.setCidade(listaViagem.get(0).getCidade());
                 estatistica.setLocalizador(listaViagem.get(0).getLocalizador());
+                estatistica.setCompanhiaAerea(listaViagem.get(0).getCompanhiaAerea());
                 estatistica.setNumeroVenda(listaViagem.get(0).getNumeroVenda());
                 estatistica.setEmbarqueData(listaViagem.get(0).getEmbarqueData());
                 estatistica.setEmbarqueHora(listaViagem.get(0).getEmbarqueHora());

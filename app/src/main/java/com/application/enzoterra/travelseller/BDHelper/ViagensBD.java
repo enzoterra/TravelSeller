@@ -36,6 +36,7 @@ public class ViagensBD extends SQLiteOpenHelper {
                 " dataNascimentoCliente VARCHAR," +
                 " hotel VARCHAR," +
                 " localizador VARCHAR," +
+                " companhiaAerea VARCHAR," +
                 " numeroVenda VARCHAR," +
                 " cidade VARCHAR," +
                 " embarqueHora VARCHAR," +
@@ -78,6 +79,7 @@ public class ViagensBD extends SQLiteOpenHelper {
                 " dataNascimentoCliente VARCHAR," +
                 " hotel VARCHAR," +
                 " localizador VARCHAR," +
+                " companhiaAerea VARCHAR," +
                 " numeroVenda VARCHAR," +
                 " cidade VARCHAR," +
                 " embarqueHora VARCHAR," +
@@ -132,6 +134,7 @@ public class ViagensBD extends SQLiteOpenHelper {
         values.put("desembarqueData", viagem.getDesembarqueData());
         values.put("observacoes", viagem.getObservacoes());
         values.put("localizador", viagem.getLocalizador());
+        values.put("companhiaAerea", viagem.getCompanhiaAerea());
         values.put("numeroVenda", viagem.getNumeroVenda());
         values.put("valorComissao", viagem.getValorComissao());
         values.put("valorTotal", viagem.getValorTotal());
@@ -164,6 +167,7 @@ public class ViagensBD extends SQLiteOpenHelper {
         values.put("desembarqueHora", viagem.getDesembarqueHora());
         values.put("desembarqueData", viagem.getDesembarqueData());
         values.put("localizador", viagem.getLocalizador());
+        values.put("companhiaAerea", viagem.getCompanhiaAerea());
         values.put("numeroVenda", viagem.getNumeroVenda());
         values.put("mes", mes);
         values.put("ano", ano);
@@ -224,6 +228,7 @@ public class ViagensBD extends SQLiteOpenHelper {
         values.put("desembarqueData", estatistica.getDesembarqueData());
         values.put("observacoes", estatistica.getObservacoes());
         values.put("localizador", estatistica.getLocalizador());
+        values.put("companhiaAerea", estatistica.getCompanhiaAerea());
         values.put("numeroVenda", estatistica.getNumeroVenda());
         values.put("valorComissao", estatistica.getValorComissao());
         values.put("valorTotal", estatistica.getValorTotal());
@@ -265,6 +270,7 @@ public class ViagensBD extends SQLiteOpenHelper {
         values.put("desembarqueHora", viagem.getDesembarqueHora());
         values.put("desembarqueData", viagem.getDesembarqueData());
         values.put("localizador", viagem.getLocalizador());
+        values.put("companhiaAerea", viagem.getCompanhiaAerea());
         values.put("numeroVenda", viagem.getNumeroVenda());
         values.put("observacoes", viagem.getObservacoes());
         values.put("valorComissao", viagem.getValorComissao());
@@ -319,6 +325,7 @@ public class ViagensBD extends SQLiteOpenHelper {
         values.put("desembarqueHora", estatistica.getDesembarqueHora());
         values.put("desembarqueData", estatistica.getDesembarqueData());
         values.put("localizador", estatistica.getLocalizador());
+        values.put("companhiaAerea", estatistica.getCompanhiaAerea());
         values.put("numeroVenda", estatistica.getNumeroVenda());
         values.put("observacoes", estatistica.getObservacoes());
         values.put("valorComissao", estatistica.getValorComissao());
@@ -343,6 +350,7 @@ public class ViagensBD extends SQLiteOpenHelper {
         values.put("desembarqueHora", valor);
         values.put("desembarqueData", valor);
         values.put("localizador", valor);
+        values.put("companhiaAerea", valor);
         values.put("numeroVenda", valor);
         values.put("valorComissao", 0);
         values.put("valorTotal", 0);
@@ -427,7 +435,7 @@ public class ViagensBD extends SQLiteOpenHelper {
     public ArrayList<Viagens> getListaViagens() {
 
         String[] columns = {"id", "nomeCliente", "cpfCliente", "rgCliente", "dataNascimentoCliente", "hotel", "cidade", "embarqueHora",
-                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "numeroVenda", "valorComissao", "valorTotal", "mes", "ano"};
+                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "companhiaAerea", "numeroVenda", "valorComissao", "valorTotal", "mes", "ano"};
 
         Cursor cursor = getWritableDatabase().query("viagens", columns, null, null, null, null, "ano, mes, embarqueData", null);
 
@@ -439,7 +447,7 @@ public class ViagensBD extends SQLiteOpenHelper {
     public ArrayList<Viagens> getListaClientes() {
 
         String[] columns = {"id", "nomeCliente", "cpfCliente", "rgCliente", "dataNascimentoCliente", "hotel", "cidade", "embarqueHora",
-                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "numeroVenda", "valorComissao", "valorTotal"};
+                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "companhiaAerea", "numeroVenda", "valorComissao", "valorTotal"};
 
         Cursor cursor = getWritableDatabase().query("viagens", columns, null, null, null, null, "nomeCliente ASC", null);
 
@@ -496,7 +504,7 @@ public class ViagensBD extends SQLiteOpenHelper {
     public ArrayList<Viagens> getListaClientesPesquisa(String nome) {
 
         String[] columns = {"id", "nomeCliente", "cpfCliente", "rgCliente", "dataNascimentoCliente", "hotel", "cidade", "embarqueHora",
-                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "numeroVenda", "valorComissao", "valorTotal"};
+                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "companhiaAerea", "numeroVenda", "valorComissao", "valorTotal"};
 
         Cursor cursor = getWritableDatabase().query("viagens", columns, "UPPER(nomeCliente) = '" + nome.toUpperCase() +"'", null, null, null, null, null);
 
@@ -508,7 +516,7 @@ public class ViagensBD extends SQLiteOpenHelper {
     public ArrayList<Viagens> getListaClientesID(int id) {
 
         String[] columns = {"id", "nomeCliente", "cpfCliente", "rgCliente", "dataNascimentoCliente", "hotel", "cidade", "embarqueHora",
-                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "numeroVenda", "valorComissao", "valorTotal"};
+                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "companhiaAerea", "numeroVenda", "valorComissao", "valorTotal"};
 
         Cursor cursor = getWritableDatabase().query("viagens", columns, "id = " + id, null, null, null, null, null);
         ArrayList<Viagens> listaClientes = new ArrayList<>();
@@ -528,9 +536,10 @@ public class ViagensBD extends SQLiteOpenHelper {
         viagem.setDesembarqueData(cursor.getString(10));
         viagem.setObservacoes(cursor.getString(11));
         viagem.setLocalizador(cursor.getString(12));
-        viagem.setNumeroVenda(cursor.getString(13));
-        viagem.setValorComissao(cursor.getDouble(14));
-        viagem.setValorTotal(cursor.getDouble(15));
+        viagem.setCompanhiaAerea(cursor.getString(13));
+        viagem.setNumeroVenda(cursor.getString(14));
+        viagem.setValorComissao(cursor.getDouble(15));
+        viagem.setValorTotal(cursor.getDouble(16));
 
         listaClientes.add(viagem);
 
@@ -573,7 +582,7 @@ public class ViagensBD extends SQLiteOpenHelper {
     public ArrayList<Estatistica> getListaViagensEstatisticas(String mes, int ano) {
 
         String[] columns = {"id", "nomeCliente", "cpfCliente", "rgCliente", "dataNascimentoCliente", "hotel", "cidade", "embarqueHora",
-                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "numeroVenda", "valorComissao", "valorTotal", "ano", "mes"};
+                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "companhiaAerea", "numeroVenda", "valorComissao", "valorTotal", "ano", "mes"};
 
         Cursor cursor = getWritableDatabase().query("estatisticas", columns, "mes = '" + mes +"'AND ano = " + ano, null, null, null, "nomeCliente ASC", null);
 
@@ -585,7 +594,7 @@ public class ViagensBD extends SQLiteOpenHelper {
     public ArrayList<Estatistica> getListaAllEstatisticas() {
 
         String[] columns = {"id", "nomeCliente", "cpfCliente", "rgCliente", "dataNascimentoCliente", "hotel", "cidade", "embarqueHora",
-                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "numeroVenda", "valorComissao", "valorTotal", "ano", "mes"};
+                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "companhiaAerea", "numeroVenda", "valorComissao", "valorTotal", "ano", "mes"};
 
         Cursor cursor = getWritableDatabase().query("estatisticas", columns, null, null, null, null, null, null);
 
@@ -611,7 +620,7 @@ public class ViagensBD extends SQLiteOpenHelper {
                 "observacoes = ?";*/
 
         String[] columns = {"id", "nomeCliente", "cpfCliente", "rgCliente", "dataNascimentoCliente", "hotel", "cidade", "embarqueHora",
-                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "numeroVenda", "valorComissao", "valorTotal", "ano", "mes"};
+                "embarqueData", "desembarqueHora", "desembarqueData", "observacoes", "localizador", "companhiaAerea", "numeroVenda", "valorComissao", "valorTotal", "ano", "mes"};
 
         Cursor cursor = getWritableDatabase().query("estatisticas", columns, where, dados, null, null, null, null);
 
@@ -662,9 +671,10 @@ public class ViagensBD extends SQLiteOpenHelper {
             viagem.setDesembarqueData(cursor.getString(10));
             viagem.setObservacoes(cursor.getString(11));
             viagem.setLocalizador(cursor.getString(12));
-            viagem.setNumeroVenda(cursor.getString(13));
-            viagem.setValorComissao(cursor.getDouble(14));
-            viagem.setValorTotal(cursor.getDouble(15));
+            viagem.setCompanhiaAerea(cursor.getString(13));
+            viagem.setNumeroVenda(cursor.getString(14));
+            viagem.setValorComissao(cursor.getDouble(15));
+            viagem.setValorTotal(cursor.getDouble(16));
 
             listaClientes.add(viagem);
         }
@@ -692,11 +702,12 @@ public class ViagensBD extends SQLiteOpenHelper {
             estatistica.setDesembarqueData(cursor.getString(10));
             estatistica.setObservacoes(cursor.getString(11));
             estatistica.setLocalizador(cursor.getString(12));
-            estatistica.setNumeroVenda(cursor.getString(13));
-            estatistica.setValorComissao(cursor.getDouble(14));
-            estatistica.setValorTotal(cursor.getDouble(15));
-            estatistica.setAno(cursor.getInt(16));
-            estatistica.setMes(cursor.getString(17));
+            estatistica.setCompanhiaAerea(cursor.getString(13));
+            estatistica.setNumeroVenda(cursor.getString(14));
+            estatistica.setValorComissao(cursor.getDouble(15));
+            estatistica.setValorTotal(cursor.getDouble(16));
+            estatistica.setAno(cursor.getInt(17));
+            estatistica.setMes(cursor.getString(18));
 
             lista.add(estatistica);
         }

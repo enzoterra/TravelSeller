@@ -205,6 +205,7 @@ public class NotificationCreator extends BroadcastReceiver {
                                 estatistica.setCidade(list_viagens.get(i).getCidade());
                                 estatistica.setHotel(list_viagens.get(i).getHotel());
                                 estatistica.setLocalizador(list_viagens.get(i).getLocalizador());
+                                estatistica.setCompanhiaAerea(list_viagens.get(i).getCompanhiaAerea());
                                 estatistica.setNumeroVenda(list_viagens.get(i).getNumeroVenda());
                                 estatistica.setEmbarqueHora(list_viagens.get(i).getEmbarqueHora());
                                 estatistica.setEmbarqueData(list_viagens.get(i).getEmbarqueData());

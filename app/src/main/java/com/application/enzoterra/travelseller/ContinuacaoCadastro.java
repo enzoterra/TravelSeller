@@ -28,8 +28,8 @@ public class ContinuacaoCadastro extends AppCompatActivity {
 
     int id = 0;
     ViagensBD bd;
-    String localizador, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData;
-    EditText edtLocalizador, edtVenda, edtEmbarqueData, edtEmbarqueHora, edtDesembarqueData, edtDesembarqueHora;
+    String localizador, companhiaAerea, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData;
+    EditText edtLocalizador, edtCompanhiaAerea, edtVenda, edtEmbarqueData, edtEmbarqueHora, edtDesembarqueData, edtDesembarqueHora;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,7 @@ public class ContinuacaoCadastro extends AppCompatActivity {
 
         //EditTexts
         edtLocalizador = findViewById(R.id.ETlocalizador);
+        edtCompanhiaAerea = findViewById(R.id.ETcompanhiaAerea);
         edtVenda = findViewById(R.id.ETvenda);
         edtEmbarqueData = findViewById(R.id.ETdataEmbarque);
         edtEmbarqueHora = findViewById(R.id.EThoraEmbarque);
@@ -68,6 +69,7 @@ public class ContinuacaoCadastro extends AppCompatActivity {
             ArrayList<Viagens> dados = bd.getListaClientesID(id);
 
             localizador = dados.get(0).getLocalizador();
+            companhiaAerea = dados.get(0).getCompanhiaAerea();
             numeroVenda = dados.get(0).getNumeroVenda();
             embarqueData = dados.get(0).getEmbarqueData();
             embarqueHora = dados.get(0).getEmbarqueHora();
@@ -75,6 +77,7 @@ public class ContinuacaoCadastro extends AppCompatActivity {
             desembarqueHora = dados.get(0).getDesembarqueHora();
 
             edtLocalizador.setText(localizador);
+            edtCompanhiaAerea.setText(companhiaAerea);
             edtVenda.setText(numeroVenda);
             edtEmbarqueData.setText(embarqueData);
             edtEmbarqueHora.setText(embarqueHora);
@@ -88,6 +91,7 @@ public class ContinuacaoCadastro extends AppCompatActivity {
         continuar.setOnClickListener(view -> {
 
             viagem.setLocalizador(edtLocalizador.getText().toString());
+            viagem.setCompanhiaAerea(edtCompanhiaAerea.getText().toString());
             viagem.setEmbarqueData(edtEmbarqueData.getText().toString());
             viagem.setEmbarqueHora(edtEmbarqueHora.getText().toString());
             viagem.setDesembarqueData(edtDesembarqueData.getText().toString());
@@ -159,6 +163,7 @@ public class ContinuacaoCadastro extends AppCompatActivity {
             intent.putExtra("id", String.valueOf(id));
 
             viagem.setLocalizador(edtLocalizador.getText().toString());
+            viagem.setCompanhiaAerea(edtCompanhiaAerea.getText().toString());
             viagem.setNumeroVenda(edtVenda.getText().toString());
             viagem.setEmbarqueData(edtEmbarqueData.getText().toString());
             viagem.setEmbarqueHora(edtEmbarqueHora.getText().toString());
@@ -170,21 +175,6 @@ public class ContinuacaoCadastro extends AppCompatActivity {
 
             startActivity(intent);
         });
-
-
-        //Máscaras Datas
-        /*SimpleMaskFormatter mascaraData = new SimpleMaskFormatter("NN/NN/NNNN");
-        MaskTextWatcher visualizadorDataEmbarque = new MaskTextWatcher(edtEmbarqueData, mascaraData);
-        MaskTextWatcher visualizadorDataDesembarque = new MaskTextWatcher(edtDesembarqueData, mascaraData);
-        edtEmbarqueData.addTextChangedListener(visualizadorDataEmbarque);
-        edtDesembarqueData.addTextChangedListener(visualizadorDataDesembarque);
-
-        //Máscaras Horas
-        SimpleMaskFormatter mascaraHora = new SimpleMaskFormatter("NN:NN");
-        MaskTextWatcher visualizadorHoraEmbarque = new MaskTextWatcher(edtEmbarqueHora, mascaraHora);
-        MaskTextWatcher visualizadorHoraDesembarque = new MaskTextWatcher(edtDesembarqueHora, mascaraHora);
-        edtEmbarqueHora.addTextChangedListener(visualizadorHoraEmbarque);
-        edtDesembarqueHora.addTextChangedListener(visualizadorHoraDesembarque);*/
 
 
         //Cor da Barra de Status
@@ -204,6 +194,7 @@ public class ContinuacaoCadastro extends AppCompatActivity {
             intent.putExtra("id", String.valueOf(id));
 
             viagem.setLocalizador(edtLocalizador.getText().toString());
+            viagem.setCompanhiaAerea(edtCompanhiaAerea.getText().toString());
             viagem.setNumeroVenda(edtVenda.getText().toString());
             viagem.setEmbarqueData(edtEmbarqueData.getText().toString());
             viagem.setEmbarqueHora(edtEmbarqueHora.getText().toString());

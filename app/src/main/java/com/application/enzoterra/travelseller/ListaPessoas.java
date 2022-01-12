@@ -26,7 +26,7 @@ public class ListaPessoas extends AppCompatActivity {
     ArrayList<Pessoa> list_pessoas;
     ListView lista;
     Button voltar;
-    String cidade, hotel, localizador, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, valorTotalString, valorComissaoString;
+    String cidade, hotel, localizador, companhiaAerea, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, valorTotalString, valorComissaoString;
     double valorTotal, valorComissao;
     String tela, telaPrincipal;
     int id;
@@ -56,6 +56,7 @@ public class ListaPessoas extends AppCompatActivity {
             cidade = (String) getIntent.getSerializableExtra("cidade");
             hotel = (String) getIntent.getSerializableExtra("hotel");
             localizador = (String) getIntent.getSerializableExtra("localizador");
+            companhiaAerea = (String) getIntent.getSerializableExtra("companhiaAerea");
             numeroVenda = (String) getIntent.getSerializableExtra("numeroVenda");
             embarqueHora = (String) getIntent.getSerializableExtra("embarqueHora");
             embarqueData = (String) getIntent.getSerializableExtra("embarqueData");
@@ -68,20 +69,22 @@ public class ListaPessoas extends AppCompatActivity {
             valorComissao = Double.parseDouble(valorComissaoString);
 
             dados = new String[]{String.valueOf(id), cidade, hotel, localizador, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, String.valueOf(valorTotal), String.valueOf(valorComissao)};
+
         } else if(tela.equals("alterarIntegrantes")){
             dados = getIntent.getStringArrayExtra("dados");
             id = Integer.parseInt(dados[0]);
             cidade = dados[1];
             hotel = dados[2];
             localizador = dados[3];
-            numeroVenda = dados[4];
-            embarqueHora = dados[5];
-            embarqueData = dados[6];
-            desembarqueHora = dados[7];
-            desembarqueData = dados[8];
-            observacoes = dados[9];
-            valorTotal = Double.parseDouble(dados[10]);
-            valorComissao = Double.parseDouble(dados[11]);
+            companhiaAerea = dados[4];
+            numeroVenda = dados[5];
+            embarqueHora = dados[6];
+            embarqueData = dados[7];
+            desembarqueHora = dados[8];
+            desembarqueData = dados[9];
+            observacoes = dados[10];
+            valorTotal = Double.parseDouble(dados[11]);
+            valorComissao = Double.parseDouble(dados[12]);
             tela = "fragmento";
         }
 
@@ -138,6 +141,7 @@ public class ListaPessoas extends AppCompatActivity {
                 intent.putExtra("cidade", cidade);
                 intent.putExtra("hotel", hotel);
                 intent.putExtra("localizador", localizador);
+                intent.putExtra("companhiaAerea", companhiaAerea);
                 intent.putExtra("numeroVenda", numeroVenda);
                 intent.putExtra("embarqueHora", embarqueHora);
                 intent.putExtra("embarqueData", embarqueData);
@@ -191,14 +195,15 @@ public class ListaPessoas extends AppCompatActivity {
                 intent.putExtra("cidade", dados[1]);
                 intent.putExtra("hotel", dados[2]);
                 intent.putExtra("localizador", dados[3]);
-                intent.putExtra("numeroVenda", dados[4]);
-                intent.putExtra("embarqueHora", dados[5]);
-                intent.putExtra("embarqueData", dados[6]);
-                intent.putExtra("desembarqueHora", dados[7]);
-                intent.putExtra("desembarqueData", dados[8]);
-                intent.putExtra("observacoes", dados[9]);
-                intent.putExtra("valorTotal", Double.parseDouble(dados[10]));
-                intent.putExtra("valorComissao", Double.parseDouble(dados[11]));
+                intent.putExtra("companhiaAerea", dados[4]);
+                intent.putExtra("numeroVenda", dados[5]);
+                intent.putExtra("embarqueHora", dados[6]);
+                intent.putExtra("embarqueData", dados[7]);
+                intent.putExtra("desembarqueHora", dados[8]);
+                intent.putExtra("desembarqueData", dados[9]);
+                intent.putExtra("observacoes", dados[10]);
+                intent.putExtra("valorTotal", Double.parseDouble(dados[11]));
+                intent.putExtra("valorComissao", Double.parseDouble(dados[12]));
                 intent.putExtra("tela", telaPrincipal);
             } else {
                 intent = new Intent(ListaPessoas.this, ContinuacaoCadastroFinal.class);

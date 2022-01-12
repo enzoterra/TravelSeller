@@ -79,6 +79,7 @@ public class Estatisticas extends AppCompatActivity {
                 intent.putExtra("hotel", (Estatisticas.this.list_viagens.get(i)).getHotel());
                 intent.putExtra("cidade", (Estatisticas.this.list_viagens.get(i)).getCidade());
                 intent.putExtra("localizador", (Estatisticas.this.list_viagens.get(i)).getLocalizador());
+                intent.putExtra("companhiaAerea", (Estatisticas.this.list_viagens.get(i)).getCompanhiaAerea());
                 intent.putExtra("numeroVenda", (Estatisticas.this.list_viagens.get(i)).getNumeroVenda());
                 intent.putExtra("embarqueHora", (Estatisticas.this.list_viagens.get(i)).getEmbarqueHora());
                 intent.putExtra("embarqueData", (Estatisticas.this.list_viagens.get(i)).getEmbarqueData());

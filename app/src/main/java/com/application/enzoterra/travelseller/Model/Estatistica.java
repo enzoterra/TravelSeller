@@ -3,7 +3,7 @@ package com.application.enzoterra.travelseller.Model;
 public class Estatistica {
     private String nomeCliente, cpfCliente, rgCliente, dataNascimentoCliente, hotel, cidade;
     private String embarqueData, desembarqueData, embarqueHora, desembarqueHora, observacoes;
-    private String localizador, numeroVenda, mes;
+    private String localizador, companhiaAerea, numeroVenda, mes;
     private double valorComissao, valorTotal;
     private long id;
     private int ano;
@@ -111,6 +111,14 @@ public class Estatistica {
 
     public void setLocalizador(String localizador) {
         this.localizador = localizador;
+    }
+
+    public String getCompanhiaAerea() {
+        return companhiaAerea;
+    }
+
+    public void setCompanhiaAerea(String companhiaAerea) {
+        this.companhiaAerea = companhiaAerea;
     }
 
     public String getNumeroVenda() {

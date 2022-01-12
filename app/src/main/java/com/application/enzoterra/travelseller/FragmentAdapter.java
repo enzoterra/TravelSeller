@@ -46,6 +46,7 @@ public class FragmentAdapter extends FragmentStateAdapter{
         this.dados[6] = dadosVoo[6];
         this.dados[7] = dadosVoo[7];
         this.dados[8] = dadosVoo[8];
+        this.dados[9] = dadosVoo[9];
     }
 
     public void setRestanteDados(String[] restanteDados){
@@ -65,11 +66,12 @@ public class FragmentAdapter extends FragmentStateAdapter{
             dados[6] = dadosVoo[6];
             dados[7] = dadosVoo[7];
             dados[8] = dadosVoo[8];
+            dados[9] = restanteDados[9];
         } else if (restanteDadosFragmento.isResumed()) {
             restanteDados = restanteDadosFragmento.getDados();
-            dados[9] = restanteDados[9];
             dados[10] = restanteDados[10];
             dados[11] = restanteDados[11];
+            dados[12] = restanteDados[12];
         }
         return dados;
 
