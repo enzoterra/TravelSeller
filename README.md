@@ -30,9 +30,9 @@ O ***TravelSeller*** é um aplicativo desenvolvido para ajudar aqueles que são 
 </br>
 
 <div align="center" display="flex">
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Lista%20de%20Clientes.jpg> &nbsp &nbsp &nbsp
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Lista%20de%20Viagens.jpg> &nbsp &nbsp &nbsp
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Valores%20Anuais.jpg>
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/ListaClientes.jpg> &nbsp &nbsp &nbsp
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/ListaViagens.jpg> &nbsp &nbsp &nbsp
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/ValoresAnuais.jpg>
 </div>
 
 </br>
@@ -44,9 +44,9 @@ O ***TravelSeller*** é um aplicativo desenvolvido para ajudar aqueles que são 
 </br>
 
 <div align="center" display="flex">
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Valores%20Anuais.jpg> &nbsp &nbsp &nbsp
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Valores%20Mensais.jpg> &nbsp &nbsp &nbsp
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Valores%20de%20Cada%20Viagem.jpg>
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/ValoresAnuais.jpg> &nbsp &nbsp &nbsp
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/ValoresMensais.jpg> &nbsp &nbsp &nbsp
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/ValoresCadaViagem.jpg>
 </div>
 
 </br>
@@ -58,9 +58,9 @@ O ***TravelSeller*** é um aplicativo desenvolvido para ajudar aqueles que são 
 </br>
 
 <div align="center" display="flex">
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Cadastro%201.jpg> &nbsp &nbsp &nbsp
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Cadastro%202.jpg> &nbsp &nbsp &nbsp
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Cadastro%203.jpg>
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Cadastro1.jpg> &nbsp &nbsp &nbsp
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Cadastro2.jpg> &nbsp &nbsp &nbsp
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Cadastro3.jpg>
 </div>
 
 </br>
@@ -72,9 +72,9 @@ O ***TravelSeller*** é um aplicativo desenvolvido para ajudar aqueles que são 
 </br>
 
 <div align="center" display="flex">
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Dados%20da%20Viagem.jpg> &nbsp &nbsp &nbsp
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Integrantes%20da%20Viagem.jpg> &nbsp &nbsp &nbsp
-<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Configura%C3%A7%C3%B5es.jpg>
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/DadosViagem.jpg> &nbsp &nbsp &nbsp
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/IntegrantesViagem.jpg> &nbsp &nbsp &nbsp
+<img width="250px" src=https://github.com/enzoterra/TravelSeller/blob/main/Screens/Configuracoes.jpg>
 </div>
 
 </br>
