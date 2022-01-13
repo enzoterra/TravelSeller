@@ -247,7 +247,6 @@ public class Settings extends AppCompatActivity {
                         viagem.setValorComissao(Double.parseDouble(nextLineViagens[16]));
                         long id = bd.salvarViagem(viagem);
 
-
                         if (arquivoIntegrantes.exists()) {
                             CSVReader readerIntegrantes = new CSVReader(new FileReader(arquivoIntegrantes.getAbsolutePath()));
                             String[] nextLineIntegrantes;
@@ -266,7 +265,6 @@ public class Settings extends AppCompatActivity {
 
                     }
                 }
-
 
                 if(arquivoEstatisticas.exists()) {
                     CSVReader reader = new CSVReader(new FileReader(arquivoEstatisticas.getAbsolutePath()));

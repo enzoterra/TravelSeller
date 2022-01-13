@@ -125,16 +125,17 @@ public class Estatisticas extends AppCompatActivity {
         voltar = findViewById(R.id.buttonVoltarEstatisticas);
         voltar.setOnClickListener(view -> {
             titulo = tituloLista.getText().toString();
-            if(titulo.equals("Valores de " + calculaMes(ajudaMes))){
-                tituloLista.setText("Valores Mensais - " + ajudaAno);
-                subTitulo1Lista.setText("Para ver as informações das viagens,");
-                subTitulo2Lista.setText("clique em algum mês da lista");
-                carregarListaMeses();
-            } else if(titulo.equals("Valores Mensais - " + ajudaAno)){
+            System.out.println(ajudaMes);
+            if(titulo.equals("Valores Mensais - " + ajudaAno)){
                 tituloLista.setText("Valores Anuais");
                 subTitulo1Lista.setText("Para ver os valores mensais,");
                 subTitulo2Lista.setText("clique em algum ano da lista");
                 carregarListaAnos();
+            } else if(titulo.equals("Valores de " + calculaMes(ajudaMes))){
+                tituloLista.setText("Valores Mensais - " + ajudaAno);
+                subTitulo1Lista.setText("Para ver as informações das viagens,");
+                subTitulo2Lista.setText("clique em algum mês da lista");
+                carregarListaMeses();
             }
         });
 
@@ -248,16 +249,16 @@ public class Estatisticas extends AppCompatActivity {
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
         if (keyEvent.getAction() == 0 && i == 4) {
             titulo = tituloLista.getText().toString();
-            if(titulo.equals("Valores de " + calculaMes(ajudaMes))){
-                tituloLista.setText("Valores Mensais - " + ajudaAno);
-                subTitulo1Lista.setText("Para ver as informações das viagens,");
-                subTitulo2Lista.setText("clique em algum mês da lista");
-                carregarListaMeses();
-            } else if(titulo.equals("Valores Mensais - " + ajudaAno)){
+            if(titulo.equals("Valores Mensais - " + ajudaAno)){
                 tituloLista.setText("Valores Anuais");
                 subTitulo1Lista.setText("Para ver os valores mensais,");
                 subTitulo2Lista.setText("clique em algum ano da lista");
                 carregarListaAnos();
+            } else if(titulo.equals("Valores de " + calculaMes(ajudaMes))){
+                tituloLista.setText("Valores Mensais - " + ajudaAno);
+                subTitulo1Lista.setText("Para ver as informações das viagens,");
+                subTitulo2Lista.setText("clique em algum mês da lista");
+                carregarListaMeses();
             }
             return false;
         }
@@ -266,43 +267,47 @@ public class Estatisticas extends AppCompatActivity {
 
 
     public String calculaMes(String mes){
-        switch (mes){
-            case "01":
-                mes = "Janeiro";
-                break;
-            case "02":
-                mes = "Fevereiro";
-                break;
-            case "03":
-                mes = "Março";
-                break;
-            case "04":
-                mes = "Abril";
-                break;
-            case "05":
-                mes = "Maio";
-                break;
-            case "06":
-                mes = "Junho";
-                break;
-            case "07":
-                mes = "Julho";
-                break;
-            case "08":
-                mes = "Agosto";
-                break;
-            case "09":
-                mes = "Setembro";
-                break;
-            case "10":
-                mes = "Outubro";
-                break;
-            case "11":
-                mes = "Novembro";
-                break;
-            case "12":
-                mes = "Dezembro";
-                break;
+        if(mes==null){
+            return "";
+        } else {
+            switch (mes) {
+                case "01":
+                    mes = "Janeiro";
+                    break;
+                case "02":
+                    mes = "Fevereiro";
+                    break;
+                case "03":
+                    mes = "Março";
+                    break;
+                case "04":
+                    mes = "Abril";
+                    break;
+                case "05":
+                    mes = "Maio";
+                    break;
+                case "06":
+                    mes = "Junho";
+                    break;
+                case "07":
+                    mes = "Julho";
+                    break;
+                case "08":
+                    mes = "Agosto";
+                    break;
+                case "09":
+                    mes = "Setembro";
+                    break;
+                case "10":
+                    mes = "Outubro";
+                    break;
+                case "11":
+                    mes = "Novembro";
+                    break;
+                case "12":
+                    mes = "Dezembro";
+                    break;
+            }
         }
         return mes;
     }

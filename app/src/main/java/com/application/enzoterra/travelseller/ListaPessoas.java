@@ -68,7 +68,7 @@ public class ListaPessoas extends AppCompatActivity {
             valorTotal = Double.parseDouble(valorTotalString);
             valorComissao = Double.parseDouble(valorComissaoString);
 
-            dados = new String[]{String.valueOf(id), cidade, hotel, localizador, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, String.valueOf(valorTotal), String.valueOf(valorComissao)};
+            dados = new String[]{String.valueOf(id), cidade, hotel, localizador, companhiaAerea, numeroVenda, embarqueHora, embarqueData, desembarqueHora, desembarqueData, observacoes, String.valueOf(valorTotal), String.valueOf(valorComissao)};
 
         } else if(tela.equals("alterarIntegrantes")){
             dados = getIntent.getStringArrayExtra("dados");

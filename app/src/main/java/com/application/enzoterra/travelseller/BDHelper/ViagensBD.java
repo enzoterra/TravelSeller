@@ -11,13 +11,11 @@ import com.application.enzoterra.travelseller.Model.Estatistica;
 import com.application.enzoterra.travelseller.Model.Pessoa;
 import com.application.enzoterra.travelseller.Model.Viagens;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class ViagensBD extends SQLiteOpenHelper {
 
-    private static final String DATABASE = "bdviagens";
+    private static final String DATABASE = "BDTravelSeller";
     private static final int VERSION = 1;
 
     //Banco de Dados
